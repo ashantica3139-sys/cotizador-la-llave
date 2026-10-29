@@ -1,0 +1,73 @@
+/* Estilos base: colores de la ferretería y tipografía fácil de leer. */
+:root {
+  color-scheme: light;
+  --navy: #1F3A5F;
+  --yellow: #F2B705;
+  --white: #FFFFFF;
+  --ink: #233247;
+  --muted: #5E6B7A;
+  --line: #D8E0E9;
+  --soft: #F4F7FA;
+  --danger: #B42318;
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--soft); color: var(--ink); font-size: 1rem; line-height: 1.55; }
+.container { width: min(100% - 32px, 920px); margin-inline: auto; }
+.site-header { background: var(--navy); color: var(--white); padding: 22px 0; }
+.header-content { display: flex; align-items: center; gap: 14px; }
+.brand-mark { width: 52px; height: 52px; flex: 0 0 52px; display: grid; place-items: center; border: 2px solid var(--yellow); border-radius: 14px; color: var(--yellow); font-weight: 800; font-size: 1.1rem; }
+.store-name { margin: 0 0 2px; color: var(--yellow); font-weight: 700; }
+h1 { margin: 0; font-size: clamp(1.35rem, 5vw, 2rem); line-height: 1.2; }
+.main-content { padding-block: 26px 40px; }
+.intro { margin: 0 0 20px; }
+.eyebrow { margin: 0 0 5px; color: var(--navy); font-size: .82rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+h2 { margin: 0 0 8px; color: var(--navy); font-size: clamp(1.35rem, 4.5vw, 1.8rem); line-height: 1.25; }
+.intro > p:last-child { margin: 0; color: var(--muted); }
+.card { padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--white); box-shadow: 0 8px 24px rgb(31 58 95 / 7%); }
+.form-card { display: grid; gap: 20px; }
+.field { display: grid; gap: 8px; }
+label { color: var(--navy); font-size: 1.05rem; font-weight: 700; }
+.optional { color: var(--muted); font-size: .92rem; font-weight: 400; }
+input, select { width: 100%; min-height: 52px; padding: 12px 14px; border: 1px solid #AEBBC9; border-radius: 10px; background: var(--white); color: var(--ink); font: inherit; font-size: 1.05rem; }
+input::placeholder { color: #758293; }
+input:focus, select:focus, .button:focus-visible { outline: 3px solid rgb(242 183 5 / 55%); outline-offset: 2px; border-color: var(--navy); }
+.input-with-unit { position: relative; }
+.input-with-unit input { padding-right: 56px; }
+.input-with-unit span { position: absolute; top: 50%; right: 15px; transform: translateY(-50%); color: var(--muted); font-weight: 700; pointer-events: none; }
+.error-message { margin: -2px 0 0; color: var(--danger); font-weight: 700; }
+.button { display: flex; min-height: 52px; width: 100%; align-items: center; justify-content: center; padding: 12px 18px; border: 0; border-radius: 10px; text-align: center; text-decoration: none; font: inherit; font-size: 1.05rem; font-weight: 800; cursor: pointer; }
+.button-primary { background: var(--yellow); color: #17283C; }
+.button-primary:hover { background: #FFD13B; }
+.result-card { margin-top: 22px; }
+.result-card[hidden] { display: none; }
+.result-heading { margin-bottom: 16px; }
+.result-heading h2 { margin-bottom: 0; }
+.table-wrap { overflow-x: auto; margin-inline: -4px; }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: .93rem; }
+th, td { padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #EEF3F8; color: var(--navy); font-size: .84rem; }
+th:first-child, td:first-child { min-width: 165px; }
+th:not(:first-child), td:not(:first-child) { white-space: nowrap; }
+.total-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0 8px; color: var(--navy); font-size: 1.12rem; }
+.total-row strong { font-size: 1.6rem; white-space: nowrap; }
+.price-note { margin: 2px 0 18px; color: var(--muted); font-size: .93rem; }
+.button-whatsapp { background: #1D9B59; color: var(--white); }
+.button-whatsapp:hover { background: #16834A; }
+.site-footer { padding: 18px 0; background: var(--navy); color: var(--white); text-align: center; }
+.site-footer p { margin: 0; font-size: .92rem; }
+
+/* En pantallas amplias, el formulario se reparte en dos columnas. */
+@media (min-width: 700px) {
+  .site-header { padding-block: 28px; }
+  .main-content { padding-block: 38px 52px; }
+  .intro { margin-bottom: 24px; }
+  .form-card { grid-template-columns: 1fr 1fr; align-items: end; gap: 22px; }
+  .form-card .button { grid-column: 1 / -1; }
+  .card { padding: 28px; }
+  .result-card { margin-top: 26px; }
+  table { font-size: 1rem; }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1F3A5F">
+  <title>Cotiza tu Kit anti lluvias | Ferretería La Llave</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand-mark" aria-hidden="true">LL</div>
+      <div>
+        <p class="store-name">Ferretería La Llave</p>
+        <h1>Cotiza tu Kit anti lluvias en segundos</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="intro" aria-labelledby="welcome-title">
+      <p class="eyebrow">Prepárate para la temporada de lluvias</p>
+      <h2 id="welcome-title">Calcula lo que necesitas para proteger tu techo</h2>
+      <p>Cuéntanos las medidas de tu techo y te mostraremos una cotización referencial.</p>
+    </section>
+
+    <form id="quote-form" class="card form-card" novalidate>
+      <div class="field">
+        <label for="roof-area">¿Cuántos metros cuadrados tiene tu techo?</label>
+        <div class="input-with-unit">
+          <input id="roof-area" name="roofArea" type="text" inputmode="decimal" autocomplete="off" placeholder="Por ejemplo: 35" aria-describedby="roof-error" required>
+          <span>m²</span>
+        </div>
+        <p id="roof-error" class="error-message" role="alert" hidden>Ingresa los metros de tu techo</p>
+      </div>
+
+      <div class="field">
+        <label for="roof-type">¿De qué tipo es tu techo?</label>
+        <select id="roof-type" name="roofType">
+          <option value="concreto">Concreto</option>
+          <option value="calamina">Calamina</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="gutter-length">Metros lineales de canaleta <span class="optional">(opcional)</span></label>
+        <div class="input-with-unit">
+          <input id="gutter-length" name="gutterLength" type="text" inputmode="decimal" autocomplete="off" placeholder="Déjalo vacío si no necesitas canaleta">
+          <span>m</span>
+        </div>
+      </div>
+
+      <button class="button button-primary" type="submit">Calcular mi kit</button>
+    </form>
+
+    <section id="quote-result" class="card result-card" aria-labelledby="result-title" hidden aria-live="polite">
+      <div class="result-heading">
+        <p class="eyebrow">Tu cotización</p>
+        <h2 id="result-title">Materiales para tu techo</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Precio unitario</th>
+              <th scope="col">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="products-list"></tbody>
+        </table>
+      </div>
+      <div class="total-row">
+        <span>Total referencial</span>
+        <strong id="quote-total">S/ 0.00</strong>
+      </div>
+      <p class="price-note">Precios referenciales de ejemplo. Confirma stock y precio final por WhatsApp.</p>
+      <a id="whatsapp-button" class="button button-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>Proyecto académico</p></div>
+  </footer>
+</body>
+</html>
